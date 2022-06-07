@@ -9,9 +9,7 @@
 
 void msetenv(all_t *all)
 {
-    for (int a = 0; all->ct[a]; a++) printf("%s\n", all->ct[a]);
-    printf("ct[1] %s.%d\nct[2] %s.%d\n", all->ct[1], sizeof(all->ct[1]), all->ct[2], sizeof(all->ct[2]));
-    if (all->ct[1] == NULL) {
+    if (!all->ct[1]) {
         mshowlist(all->list);
         return;
     } else if (last_line(all->ct) > 3)

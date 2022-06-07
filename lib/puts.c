@@ -9,7 +9,6 @@
 
 void mputs(char const *str, int i)
 {
-    printf("\nstr => %s\n", str);
     while (*str) write(1, str++, 1);
     if (i == 1) write(1, "\n", 1);
 }

@@ -15,7 +15,6 @@ char *get_key(char *str)
     for (i = 0; str[i] != '=' && str[i] != '\0'; i++)
         key[i] = str[i];
     key[i] = '\0';
-    printf("key => %s\n", key);
     return (key);
 }
 
@@ -30,6 +29,5 @@ char *get_data(char *str)
     for (e = 0; str[i]; i++, e++)
         data[e] = str[i];
     data[e] = '\0';
-    printf("data => %s\n", data);
     return (data);
 }
