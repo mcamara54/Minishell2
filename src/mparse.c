@@ -23,7 +23,7 @@ void parse_commands(all_t *all)
         looking_for_cones(all);
         a = 1;
         return;
-    } if (a == 0)
+    } if (!a)
         analyse_commands(all, all->commands);
     return;
 }

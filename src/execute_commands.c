@@ -25,7 +25,7 @@ void execute_command(char **env, char **commands, char *concted)
 
     if (f == -1)
         exit (84);
-    else if (f == 0)
+    else if (!f)
         execve(concted, commands, env);
     else
         waitpid(f, &value, 0), segv_and_floatings(value);
@@ -40,12 +40,12 @@ void execution(all_t *all)
     for (int a = 0; ct[a]; ) {
         concted = mstrcat(ct[a], "/"), concted = mstrcat(concted, all->ct[0]);
         acs = access(concted, F_OK);
-        if (acs == 0) {
+        if (!acs) {
             execute_command(all->env, all->ct, concted);
             break;
         } else
             a++;
         free(concted);
     }
-    if (acs != 0) mputs(all->ct[0], 0), mputs(": Command not found.", 1);
+    if (acs) mputs(all->ct[0], 0), mputs(": Command not found.", 1);
 }
