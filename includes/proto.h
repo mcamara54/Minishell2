@@ -37,7 +37,6 @@ env_t *remove_at(env_t *list, int pos);
 int find_pos(env_t *list, char *key);
 char *path_data(env_t *list);
 char *path_pwd(env_t *list);
-void free_everything(all_t *all);
 char *mgetline(all_t *all);
 int get_arguments(char c, char *del);
 int counting(char *cs, char *del);
