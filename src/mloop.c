@@ -13,6 +13,6 @@ void minishell_loop(all_t *all)
         mputs("~~~~> ", 0);
         mgetline(all);
         parse_commands(all);
-        free_everything(all);
+        free(all->commands);
     }
 }
